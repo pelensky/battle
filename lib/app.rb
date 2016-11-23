@@ -20,8 +20,10 @@ class Battle < Sinatra::Base
     erb(:play)
   end
 
-  get '/view-hit-points' do
-    erb(:view_hit_points)
+  get '/attack' do
+    @player1 = session[:player1]
+    @player2 = session[:player2]
+    erb(:attack)
   end
 
   # start the server if ruby file executed directly
