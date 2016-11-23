@@ -1,14 +1,14 @@
-require "app.rb"
-require "spec_helper"
+ require "app.rb"
+ require "spec_helper"
 
-RSpec.feature "Battle", :type => :feature do
-  scenario "Users start a battle" do
-    visit "/start-battle"
+feature "Enter names" do
+  scenario "submitting names" do
+    visit('/')
 
-    fill_in "Player 1", :with => "Dan"
-    fill_in "Player 2", :with => "Jenna"
-    click_button "Start Battle"
+    fill_in :player1, with: "Dan"
+    fill_in :player2, with: "Jenna"
+    click_button "Start"
 
-    expect(page).to have_text("Dan vs Jenna!")
+    expect(page).to have_content("Dan vs Jenna!")
   end
 end
