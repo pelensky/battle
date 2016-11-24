@@ -13,7 +13,8 @@ describe Player do
     end
 
     it "should reduce its own health by a random number" do
-      expect{player.reduce_health}.to change{player.health}.by -10
+      srand(55)
+      expect{player.reduce_health}.to change{player.health}.by -15
     end
 
 
