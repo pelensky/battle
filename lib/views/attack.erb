@@ -4,7 +4,14 @@
   </h1>
 </div>
 <div>
- <h2>10 HP deducted</h2>
+ <h2><%=@game.damage_did%> HP deducted!</h2>
+</div>
+<div>
+  <% if @game.player_defend.poisoned? %>
+    <h2>
+      <%=@game.player_defend.name %> took <%= @game.poison_damage_did %> HP poison damage
+    </h2>
+    <%end%>
 </div>
 <div>
   <form action = '/play' method='get'>

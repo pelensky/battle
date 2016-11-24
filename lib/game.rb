@@ -1,7 +1,7 @@
 class Game
   @game = nil
 
-  attr_reader :player1, :player2
+  attr_reader :player1, :player2, :damage_did, :poison_damage_did
 
   def initialize(player1, player2)
     @player1 = player1
@@ -18,7 +18,8 @@ class Game
   end
 
   def attack
-    player_defend.reduce_health
+    @damage_did = rand(5..15)
+    player_defend.reduce_health(@damage_did)
     turn_increment
   end
 
@@ -28,7 +29,8 @@ class Game
   end
 
   def poison_damage
-    player_defend.poison_damage if player_defend.poisoned?
+    @poison_damage_did = rand(4..10)
+    player_defend.poison_damage(@poison_damage_did) if player_defend.poisoned?
   end
 
   def player_defend

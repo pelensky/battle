@@ -9,12 +9,12 @@ class Player
     @poison_count = 0
   end
 
-  def reduce_health(damage = rand(5..15))
+  def reduce_health(damage)
     self.health -= damage
   end
 
-  def poison_damage
-    reduce_health rand(4..10)
+  def poison_damage(damage)
+    reduce_health(damage)
     increment_poison_count
     unpoison if @poison_count >= 3
   end

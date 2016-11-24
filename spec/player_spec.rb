@@ -12,9 +12,9 @@ describe Player do
       expect(player.health).to eq 60
     end
 
-    it "should reduce its own health by a random number" do
-      srand(55)
-      expect{player.reduce_health}.to change{player.health}.by -15
+    it "should reduce its own health by a number" do
+      damage = 10
+      expect{player.reduce_health(damage)}.to change{player.health}.by -10
     end
 
   end
@@ -31,13 +31,12 @@ describe Player do
 
     it "should take poison damage" do
       player.poison
-      srand 1234
-      expect{player.poison_damage}.to change{player.health}.by -7
+      expect{player.poison_damage(7)}.to change{player.health}.by -7
     end
 
     it "should recover after three poison damage" do
       player.poison
-      3.times{player.poison_damage}
+      3.times{player.poison_damage(7)}
       expect(player).not_to be_poisoned
     end
   end

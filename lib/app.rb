@@ -40,6 +40,7 @@ class Battle < Sinatra::Base
 
   get '/poison' do
     @game = Game.game
+    @game.poison
     erb :poison
   end
 
