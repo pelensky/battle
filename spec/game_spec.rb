@@ -41,4 +41,11 @@ context "attack" do
   end
 end
 
+context "lose" do
+  it "should tell you if someone has lost if their HP is below 0" do
+    allow(player1).to receive(:health).and_return 0
+    expect(game.lose?).to eq true
+  end
+end
+
 end

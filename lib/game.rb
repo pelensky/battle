@@ -23,6 +23,10 @@ end
     player2
   end
 
+  def lose?
+    player_attack.health <= 0
+  end
+
   private
   attr_accessor :turn_number
 

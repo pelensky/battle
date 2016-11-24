@@ -19,13 +19,22 @@ class Battle < Sinatra::Base
 
   get '/play' do
     @game = $game
+    if @game.lose?
+      redirect to('/lose')
+    else
     erb(:play)
+  end
   end
 
   get '/attack' do
     @game = $game
     @game.attack
     erb(:attack)
+  end
+
+  get '/lose' do
+    @game = $game
+    erb(:lose)
   end
 
 
