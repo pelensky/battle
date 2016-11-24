@@ -11,9 +11,7 @@ class Player
     self.health -= 10
   end
 
-  def attack(target)
-    target.reduce_health
-  end
+
   private
 
   attr_writer :health

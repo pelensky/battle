@@ -16,8 +16,6 @@ describe Player do
       expect{player.reduce_health}.to change{player.health}.by -10
     end
 
-    it "should attack itself and reduce health by ten" do
-      expect{player.attack(player)}.to change{player.health}.by -10
-    end
+
   end
 end
