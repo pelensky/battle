@@ -2,7 +2,6 @@ require './player'
 RSpec.describe Player do
     subject(:player1) { described_class.new("jack") }
     subject(:player2) { described_class.new("elizabeth") }
-
     describe "name" do
       it 'returns the name' do
         expect(player1.name).to eq "jack"
@@ -14,14 +13,6 @@ RSpec.describe Player do
         expect(player1.hit_points).to eq described_class::MAX_POINTS
       end
     end
-
-    describe '#attack' do
-      it 'attacks the other player' do
-        expect(player2).to respond_to(:deduct)
-        player1.attack(player2)
-      end
-    end
-
 
     describe '#deduct' do
       it 'deducts 10 points following an attack' do

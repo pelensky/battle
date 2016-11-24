@@ -13,10 +13,4 @@ class Player
     @hit_points -= 10
   end
 
-  def attack(other_player)
-    other_player.deduct
-  end
-
-
-
 end
