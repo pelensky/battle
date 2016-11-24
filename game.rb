@@ -10,10 +10,7 @@ class Game
 
     def attack(player)
       player.deduct
-      switch_turn
     end
-
-    private
 
     def switch_turn
       if turn == player1

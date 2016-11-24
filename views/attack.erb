@@ -1,2 +1,8 @@
-<h1>You have attacked <%= @game.player2.name %></h1>
-<a href='/play'>Go back</a>
+<% if @game.turn == @game.player1 %>
+<h1><%= @game.player1.name %> has attacked <%= @game.player2.name %></h1>
+<% else %>
+<h1><%= @game.player2.name %> has attacked <%= @game.player1.name %></h1>
+<% end %>
+<form action="/switch_names" method= "post"  >
+  <button type="submit">Go back</button>
+</form>

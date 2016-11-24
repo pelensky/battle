@@ -25,7 +25,17 @@ RSpec.describe Game do
   it 'should switch turns' do
     allow(player2).to receive(:deduct)
     game.attack(player2)
+    game.switch_turn
     expect(game.turn).to eq player2
   end
 
+  it 'should switch turns again' do
+    allow(player1).to receive(:deduct)
+    allow(player2).to receive(:deduct)
+    game.attack(player2)
+    game.switch_turn
+    game.attack(player1)
+    game.switch_turn
+    expect(game.turn).to eq player1
+  end
 end
