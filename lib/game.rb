@@ -1,12 +1,21 @@
 class Game
+  @game = nil
 
-attr_reader :player1, :player2
+  attr_reader :player1, :player2
 
-def initialize(player1, player2)
-  @player1 = player1
-  @player2 = player2
-  @turn_number = 0
-end
+  def initialize(player1, player2)
+    @player1 = player1
+    @player2 = player2
+    @turn_number = 0
+  end
+
+  def self.game
+    @game
+  end
+
+  def self.game=(value)
+    @game = value
+  end
 
   def attack
     player_defend.reduce_health
