@@ -3,7 +3,7 @@ require "game"
 describe Game do
   subject(:game) {described_class.new(player1, player2) }
   let(:player1) {double(:player1)}
-  let(:player2) {double(:player2)}
+  let(:player2) {double(:player2, reduce_health: nil)}
 
 context "setup" do
   it "should hold a player 1 object " do
@@ -18,11 +18,27 @@ end
 
 context "attack" do
 
-  it "should attack player 2 and reduce health" do
+  it "should attack player2 first and reduce health" do
     expect(player2).to receive :reduce_health
     game.attack
   end
 
+  it "should attack player 1 second" do
+    game.attack
+    expect(player1).to receive :reduce_health
+    game.attack
+  end
+
+  it "should designate attacking and defending players" do
+    expect(game.player_defend).to eq player2
+    expect(game.player_attack).to eq player1
+  end
+
+  it "should switch them after attack turn" do
+    game.attack
+    expect(game.player_defend).to eq player1
+    expect(game.player_attack).to eq player2
+  end
 end
 
 end
