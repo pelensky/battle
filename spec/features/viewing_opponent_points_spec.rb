@@ -1,7 +1,7 @@
 require 'spec_helper'
-RSpec.feature "see player 2 hit points", :type => :feature do
+RSpec.feature "see player 2 hit points" do
   scenario "player 1 wants to view player 2 hit points" do
-    visit "/play"
-    expect(page).to have_content("Player 1 Hit points Player 2 points")
+    sign_in_and_play
+    expect(page).to have_content("Elizabeth: 60/60 HP")
   end
 end
