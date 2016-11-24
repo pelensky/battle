@@ -9,3 +9,8 @@ def attack
   click_button "Attack"
   click_button "ok"
 end
+
+def poison
+  click_button "poison"
+  click_button "ok"
+end

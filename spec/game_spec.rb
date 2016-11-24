@@ -48,4 +48,23 @@ context "lose" do
   end
 end
 
+  context "poison move" do
+    it "should be able to poison a player" do
+      expect(player2).to receive(:poison)
+      game.poison
+    end
+
+    it "should not damage the unpoisoned player" do
+      allow(player2).to receive(:poisoned?).and_return(false)
+      expect(player2).not_to receive(:poison_damage)
+      game.poison_damage
+    end
+
+    it "should damage a poisoned player" do
+      allow(player2).to receive(:poisoned?).and_return(true)
+      expect(player2).to receive(:poison_damage)
+      game.poison_damage
+    end
+  end
+
 end

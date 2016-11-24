@@ -29,12 +29,18 @@ class Battle < Sinatra::Base
   get '/attack' do
     @game = Game.game
     @game.attack
+    @game.poison_damage
     erb(:attack)
   end
 
   get '/lose' do
     @game = Game.game
     erb(:lose)
+  end
+
+  get '/poison' do
+    @game = Game.game
+    erb :poison
   end
 
   # start the server if ruby file executed directly

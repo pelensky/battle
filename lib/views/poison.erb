@@ -1,0 +1,10 @@
+<div>
+  <h1>
+    <%= @game.player_attack.name %> poisoned <%= @game.player_defend.name %>!
+  </h1>
+</div>
+<div>
+  <form action = '/play' method='get'>
+    <input id = 'ok' type = 'submit' value = 'Okay!'/>
+  </form>
+</div>

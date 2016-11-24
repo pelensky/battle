@@ -22,6 +22,15 @@ class Game
     turn_increment
   end
 
+  def poison
+    player_defend.poison
+    turn_increment
+  end
+
+  def poison_damage
+    player_defend.poison_damage if player_defend.poisoned?
+  end
+
   def player_defend
     return player2 if even_turn?
     player1
