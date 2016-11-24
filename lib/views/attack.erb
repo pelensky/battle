@@ -1,1 +1,13 @@
-<h1> <%=@player1%> has attacked <%=@player2%>! 1 point deducted
+<div>
+  <h1>
+    <%=@player1.name%> has attacked <%=@player2.name%>!
+  </h1>
+</div>
+<div>
+ <h2>10 HP deducted</h2>
+</div>
+<div>
+  <form action = '/play' method='get'>
+    <input id = 'ok' type = 'submit' value = 'Okay!'/>
+  </form>
+</div>
