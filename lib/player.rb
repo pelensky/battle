@@ -8,7 +8,7 @@ class Player
   end
 
   def reduce_health
-    self.health -= 10
+    self.health -= rand(5..15)
   end
 
 

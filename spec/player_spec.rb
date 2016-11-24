@@ -12,7 +12,7 @@ describe Player do
       expect(player.health).to eq 60
     end
 
-    it "should reduce its own health by ten" do
+    it "should reduce its own health by a random number" do
       expect{player.reduce_health}.to change{player.health}.by -10
     end
 

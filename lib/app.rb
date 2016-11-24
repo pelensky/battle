@@ -22,8 +22,8 @@ class Battle < Sinatra::Base
     if @game.lose?
       redirect to('/lose')
     else
-    erb(:play)
-  end
+      erb(:play)
+    end
   end
 
   get '/attack' do
