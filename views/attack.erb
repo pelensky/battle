@@ -3,6 +3,7 @@
 <% else %>
 <h1><%= @game.player2.name %> has attacked <%= @game.player1.name %></h1>
 <% end %>
-<form action="/switch_names" method= "post"  >
+
+<form action="/switch-turns" method= "post"  >
   <button type="submit">Go back</button>
 </form>

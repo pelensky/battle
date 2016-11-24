@@ -1,13 +1,14 @@
 require 'spec_helper'
-  RSpec.feature 'turn changing' do
-    scenario 'player 1\'s turn' do
+
+RSpec.feature 'switches turns' do
+
+  scenario 'initially player 1s turn' do
       sign_in_and_play
       expect(page).not_to have_content("Elizabeth's turn")
       expect(page).to have_content("Jack's turn")
-    end
+  end
 
-
-  scenario 'player 1 has attacked player 2, now its player2 turn' do
+  scenario 'after player 1 has attacked' do
     sign_in_and_play
     click_button("Attack")
     click_button("Go back")
