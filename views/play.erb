@@ -1,6 +1,7 @@
 <!-- <h1> <%= @player_1_name %> VS <%= @player_2_name %> successfully created </h1> -->
 <h1> <%= @game.player1.name %> VS <%= @game.player2.name %> successfully created </h1>
-<h2> <%= @game.turn.name %>'s turn </h2>  
+<h2> <%= @game.turn.name %>'s turn </h2>
+<h3> <%= @game.player1.name %>: <%= @game.player1.hit_points %>/60 HP</h3>  
 <h3> <%= @game.player2.name %>: <%= @game.player2.hit_points %>/60 HP</h3>
 <form action="/attack">
   <button type="submit">Attack</button>

@@ -28,6 +28,4 @@ RSpec.describe Game do
     expect(game.turn).to eq player2
   end
 
-  it '' do
-
 end
