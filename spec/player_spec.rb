@@ -1,4 +1,4 @@
-srequire 'player'
+require 'player'
 
 RSpec.describe Player do
     subject(:player1) { described_class.new("jack") }
