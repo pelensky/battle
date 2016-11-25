@@ -26,8 +26,13 @@ class Battle < Sinatra::Base
 
   get '/attack' do
     @game = $game
-    Attack.run(@game.opponent_of(@game.turn))
-    erb(:attack)
+    @opponent = @game.opponent_of(@game.turn)
+    Attack.run(@opponent)
+    if @opponent.hit_points <= 0
+      erb(:lose)
+    else
+      erb(:attack)
+    end
   end
 
   post '/switch-turns' do
