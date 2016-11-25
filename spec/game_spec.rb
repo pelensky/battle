@@ -1,4 +1,4 @@
-require './game'
+require 'game'
 
 RSpec.describe Game do
 

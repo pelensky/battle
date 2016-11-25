@@ -1,4 +1,5 @@
-require './player'
+require 'player'
+
 RSpec.describe Player do
     subject(:player1) { described_class.new("jack") }
     subject(:player2) { described_class.new("elizabeth") }
