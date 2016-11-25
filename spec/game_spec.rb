@@ -45,4 +45,10 @@ RSpec.describe Game do
     end
   end
 
+  describe "#game_over" do
+    it "should know when a player has got down to 0 HP" do
+      
+
+    end
+  end
 end

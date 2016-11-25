@@ -19,13 +19,15 @@ class Battle < Sinatra::Base
     redirect '/play'
   end
 
-  get '/play' do
+  before do
     @game = Game.instance
+  end
+
+  get '/play' do
     erb(:play)
   end
 
   post '/attack' do
-    @game = Game.instance
     Attack.run(@game.opponent_of(@game.turn))
     if (@game.opponent_of(@game.turn)).hit_points <= 0
       redirect '/lose'
@@ -35,18 +37,15 @@ class Battle < Sinatra::Base
   end
 
   get '/lose' do
-    @game = Game.instance
     erb(:lose)
   end
 
   get '/attack' do
-    @game = Game.instance
     erb(:attack)
   end
 
-
   post '/switch-turns' do
-    @game = Game.instance.switch_turn
+    @game.switch_turn
     redirect '/play'
   end
 
