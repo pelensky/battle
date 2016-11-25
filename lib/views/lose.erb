@@ -1,1 +1,1 @@
-<h1><%= @game.turn.name %> has attacked <%= @opponent.name %> - <%= @opponent.name %> loses</h1>
+<h1><%= @game.turn.name %> has attacked <%= (@game.opponent_of(@game.turn)).name %> - <%= (@game.opponent_of(@game.turn)).name %> loses</h1>
