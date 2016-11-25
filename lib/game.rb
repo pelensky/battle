@@ -8,9 +8,9 @@ class Game
     @player2 = player2
   end
 
-  def attack(player)
-    player.deduct
-  end
+  # def attack(player)
+  #   player.deduct
+  # end
 
   def switch_turn
     @turn = turn == player1 ? player2 : player1

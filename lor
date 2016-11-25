@@ -1,0 +1,44 @@
+
+Attack
+  #run
+[32m    attacks a player[0m
+
+attacks a player
+[32m  player 1 attacks player 2[0m
+[32m  attack reduces player2 hit points[0m
+[32m  player 2 attacks player 1[0m
+[32m  attack reduces player1 hit points[0m
+
+Sets their battle name
+[32m  lands on battle page and enters their usernames[0m
+
+switches turns
+[32m  initially player 1s turn[0m
+[32m  after player 1 has attacked[0m
+
+viewing all the hit points
+[32m  player 1 wants to view player 2 hit points[0m
+[32m  view my own hit points[0m
+
+Game
+[32m  should be initialized with 2 players[0m
+[32m  should be player's 1 turn to begin with[0m
+  #attack
+[32m    attacks the other player[0m
+  #switch_turn
+[32m    should switch turns after player 1 attacks[0m
+[32m    should switch turns again after player 2 attacks[0m
+  #opponent_of
+[32m    returns the opponent of the player whose turn it is[0m
+
+Player
+  name
+[32m    returns the name[0m
+  #hit_points
+[32m    starts with 60 HP[0m
+  #deduct
+[32m    deducts 10 points following an attack[0m
+
+Finished in 0.22171 seconds (files took 0.96965 seconds to load)
+[32m19 examples, 0 failures[0m
+
